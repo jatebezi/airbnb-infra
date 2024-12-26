@@ -13,9 +13,5 @@ resource "aws_instance" "airbnb-web" {
   encrypted = true
 
   }
-
-  tags ={
-    name ="airbnbandjude"
-  }
 }
 
