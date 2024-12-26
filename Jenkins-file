@@ -1,0 +1,54 @@
+def COLOR_MAP = [
+
+    'SUCCESS': 'good',
+
+    'FAILURE': 'danger',
+
+    ]
+
+pipeline {
+    agent any
+    
+    tools {
+        terraform    'Terraform'
+    }
+    
+    
+    stages {
+        stage( 'git checkout') {
+            steps {
+                echo 'cloning codbase'
+                git branch: 'main', credentialsId: '82bf5f94-7f5d-43d1-b86b-e73f7de7d26b', url: 'https://github.com/jatebezi/airbnb-infra.git'
+                sh 'ls'
+            }
+        }
+        
+        stage( 'terraform init') {
+            steps {
+                sh 'terraform init'
+            }
+        }
+        
+        stage( 'terraform plan') {
+            steps {
+                sh 'terraform plan'
+            }
+        }
+        
+        
+        stage( 'terraform apply ') {
+            steps {
+                sh 'terraform apply --auto-approve'
+            }
+        } 
+    }
+    
+    post  { 
+        always { 
+         
+           echo 'I will always say Hello again!'
+            slackSend channel: '#jjtech-empower-batch', color: COLOR_MAP[currentBuild.currentResult], message: "Done by Jude. *${currentBuild.currentResult}:* Job ${env.JOB_NAME} build ${env.BUILD_NUMBER} \n More info at: ${env.BUILD_URL}"
+        }
+    }
+    
+}
