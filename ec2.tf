@@ -14,7 +14,7 @@ resource "aws_instance" "airbnb-web" {
 
   }
   tags={
-    name="judesytjyjyt"
+    name="judes"
   }
  
 }
