@@ -1,4 +1,4 @@
-resource "aws_instance" "airbnb-web" {
+/*resource "aws_instance" "airbnb-web" {
 
   ami           =var.ami_id
 
@@ -42,3 +42,4 @@ stage('checkov scan') {
      //    sh 'checkov -d . --skip-check CKV_AWS_79,CKV2_AWS_41'  // use checkov to scan the terraform code
       }
 }
+*/
