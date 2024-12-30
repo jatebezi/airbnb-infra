@@ -12,7 +12,7 @@ pipeline {
         stage( 'git checkout') {
             steps {
                 echo 'cloning codbase'
-                git branch: 'main', credentialsId: 'cf2a02be-f5fa-4b56-b033-84cd150afd68', url: 'https://github.com/jatebezi/airbnb-infra.git'
+                git branch: 'maintain', credentialsId: '99ae9f71-16bb-483a-afea-14185acd02da', url: 'https://github.com/jatebezi/airbnb-infra.git'
                 sh 'ls'
             }
         }
