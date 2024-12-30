@@ -4,7 +4,7 @@ resource "aws_instance" "airbnb-web" {
 
   instance_type = var.instance_type
   tags={
-    Name="Judes-ownnn"
+    Name="Judes-ownnnm"
   }
 }
 
