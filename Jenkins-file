@@ -6,7 +6,7 @@ pipeline {
     tools {
         terraform    'Terraform'
     }
-    
+    c
     
     stages {
         stage( 'git checkout') {
@@ -42,7 +42,7 @@ pipeline {
 
         stage( 'terraform apply ') {
             steps {
-                sh 'terraform apply --auto-approve'
+                sh 'terraform aply --auto-approve'
             }
         } 
     }
