@@ -1,4 +1,4 @@
-/*resource "aws_instance" "airbnb-web" {
+resource "aws_instance" "airbnb-web" {
 
   ami           =var.ami_id
 
@@ -10,7 +10,7 @@
 
 
 
-
+/*
 def COLOR_MAP = [
 
     'SUCCESS': 'good',
