@@ -6,7 +6,6 @@ pipeline {
     tools {
         terraform    'Terraform'
     }
-    c
     
     stages {
         stage( 'git checkout') {
