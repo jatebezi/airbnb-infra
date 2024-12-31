@@ -1,6 +1,6 @@
 
 
-/*pipeline {
+pipeline {
     agent any
     
     tools {
@@ -47,4 +47,3 @@
     }
     
 }   
-*/
