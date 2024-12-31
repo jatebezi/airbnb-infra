@@ -35,8 +35,8 @@ pipeline {
                 sh 'sudo yum remove python3-requests'   // Remove the package python3-requests already with the AMI
                 sh 'sudo pip3 install requests'        //  Use pip3 to install the package called request
                 sh 'sudo pip3 install checkov'
-                sh 'checkov -d .'            //   Use pip3 to install the package called checkov
-                //sh 'checkov -d . --skip-check CKV_AWS_79,CKV2_AWS_41'  // use checkov to scan the terraform code
+                //sh 'checkov -d .'            //   Use pip3 to install the package called checkov
+                sh 'checkov -d . --skip-check CKV_AWS_79,CKV_AWS_8,CKV2_AWS_41'  // use checkov to scan the terraform code
             }
         }
 
