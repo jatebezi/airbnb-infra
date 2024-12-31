@@ -8,7 +8,7 @@ resource "aws_instance" "airbnb-web" {
   tags={
     Name="Judes-manmmn"
   }
-
+}
 
 
 
