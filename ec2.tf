@@ -44,11 +44,11 @@ stage('checkov scan') {
      //    sh 'checkov -d . --skip-check CKV_AWS_79,CKV2_AWS_41'  // use checkov to scan the terraform code
       }
 }
-*/
 
 
 
-pipeline {
+
+/*pipeline {
     agent any
     tools{
         maven 'localMaven'
@@ -75,7 +75,7 @@ pipeline {
         post {
             success {
               echo 'now Archiving'
-              archiveArtifacts artifacts: '**/*.war'
+              archiveArtifacts artifacts: '**.war'
                 
             }
         }
