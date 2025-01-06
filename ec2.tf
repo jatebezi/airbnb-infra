@@ -45,3 +45,55 @@ stage('checkov scan') {
       }
 }
 */
+
+
+
+pipeline {
+    agent any
+    tools{
+        maven 'localMaven'
+        jdk 'localjdk'
+    }
+
+    stages {
+        stage('git checkout') {
+            steps {
+                echo 'cloning codebase'
+                git branch: 'main', credentialsId: '629aa824-155f-4c5c-b403-66ad6eab0695', url: 'https://github.com/jatebezi/jenkins-cicd-app-pipleline-pro.git'
+                sh 'ls'
+            }
+        }
+        
+        
+        stage('Build') { 
+            steps {
+                
+                
+                sh 'mvn clean package'
+        }   
+        
+        post {
+            success {
+              echo 'now Archiving'
+              archiveArtifacts artifacts: '**/*.war'
+                
+            }
+        }
+        
+        stage('Unit Test'){
+            steps {
+                sh 'mvn test'
+            }
+        }
+        
+        stage('Intergartion Test'){
+            steps {
+                sh 'mvn verify -DskipUnitTests'
+            }
+        }
+        A
+        A
+   }
+   
+}
+/*

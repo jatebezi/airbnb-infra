@@ -11,7 +11,7 @@ pipeline {
         stage( 'git checkout') {
             steps {
                 echo 'cloning codbase'
-               git branch: 'main', credentialsId: '16c33cab-ce38-41b4-b664-4ba1d9815794', url: 'https://github.com/jatebezi/airbnb-infra.git'
+               git branch: 'main', credentialsId: '18fb6c76-c187-4a77-98cf-c19e4c183352', url: 'https://github.com/jatebezi/airbnb-infra.git'
                 sh 'ls'
             }
         }
@@ -31,7 +31,7 @@ pipeline {
         stage('checkov scan') {
             steps {
 
-                sh 'sudo yum install python3-pip'        // Install the package python3-pip
+                sh 'sudo yum install python3-pip -y'        // Install the package python3-pip
                 sh 'sudo yum remove python3-requests'   // Remove the package python3-requests already with the AMI
                 sh 'sudo pip3 install requests'        //  Use pip3 to install the package called request
                 sh 'sudo pip3 install checkov'
